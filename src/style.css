@@ -1,0 +1,61 @@
+/* *{
+      box-sizing: border-box;
+}
+
+body{
+      background: #181818;
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+      padding: 0 1.5em;
+}
+
+.content{
+      max-width: 1170px;
+      margin-left: auto;
+      margin-right: auto;
+      padding:  1.5em;
+
+}
+.logo{
+      text-align: center;
+      font-size: 3em;
+      color: rgba(255, 0, 0, 0.534);
+}
+
+.payment-form{
+      
+      max-width: 500px;
+      box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);      
+      background: #222222;
+          
+}
+
+.payment-form > *{
+      padding: 1em;
+}
+.payment-form form p{
+      margin: 0;
+      padding: .6em 1em;
+}
+
+.payment-form .fraction{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+}
+
+.payment-form .fraction input{
+      
+}
+
+
+.payment-form form button,
+.payment-form form input{
+      width: 100%;
+      padding: 1em;
+      border: none;
+      outline: none;
+}
+
+.payment-form form label{
+      display: block;
+} */
