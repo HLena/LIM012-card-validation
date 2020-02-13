@@ -1,61 +1,138 @@
-/* *{
+*{
       box-sizing: border-box;
 }
 
 body{
-      background: #181818;
+      background: #ffffff;
       color: white;
       font-family: 'Quicksand', sans-serif;
       padding: 0 1.5em;
 }
 
+/* Estilos para formulario de pago */
 .content{
-      max-width: 1170px;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      padding:  1.5em;
-
-}
-.logo{
+      padding:  1.5em; 
+      background: rgb(236, 236, 223);
       text-align: center;
-      font-size: 3em;
-      color: rgba(255, 0, 0, 0.534);
+      
+
 }
 
-.payment-form{
-      
-      max-width: 500px;
-      box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);      
-      background: #222222;
+.payment-form{      
+      max-width: 700px;
+      box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);       
           
 }
 
 .payment-form > *{
       padding: 1em;
 }
-.payment-form form p{
-      margin: 0;
-      padding: .6em 1em;
-}
 
-.payment-form .fraction{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-}
-
-.payment-form .fraction input{
-      
+.payment-form {
+      text-align: center;
+      margin: 1em;
+      /* padding: .6em 1em; */
 }
 
 
-.payment-form form button,
-.payment-form form input{
+
+
+.payment-form button,
+.payment-form input{
       width: 100%;
       padding: 1em;
       border: none;
       outline: none;
+      margin: .6em ;
+      border-radius: .2em;
 }
 
-.payment-form form label{
+.payment-form button{
+      background: black;
+      color: white;
+      max-width: 50%;
+      text-transform: uppercase;
+      font-weight: bolder;
+}
+
+.payment-form label{
       display: block;
-} */
+}
+
+.confirm-request span{
+      color: black;
+      
+}
+.confirm-request{
+      padding: 1em;
+}
+/* Estilos para tarjeta de credito */
+.card-wrapper{
+      /* text-align: center;    */
+      display: inline-block;         
+}
+
+.card{      
+      max-width: 700px;
+      height: auto !important;
+      min-height: 400px;
+      height: 150em;
+      /* background: rgb(32, 32, 59); */
+      padding: 1em;
+      border-radius: 1em ;  
+      /* background: linear-gradient(50deg, black,rgb(48, 156, 206)); */
+      background: linear-gradient(70deg,rgb(57, 57, 173),rgb(67, 177, 67));
+      
+}
+
+.front-side,
+.back-side{
+      margin: 0;      
+      height: auto;
+      width: auto;
+}
+
+.front-side{
+      display: grid;
+      grid-template-areas:    "ship ship"
+                              "number number"
+                              "fullName expiredDate";      
+      align-items: stretch;
+}
+.front-side > *{
+      margin: 1em;
+}
+.ship-card{
+      grid-area: ship;
+      background-image: url("../chip.png");
+      
+      background: linear-gradient(10deg,rgb(230, 216, 216),rgb(161, 138, 5));
+      /* background: rgb(238, 199, 27); */
+      border-radius: .5em;
+      width: 15%;
+      /* height: 15%; */
+      min-height: 80px;
+}
+
+.number-card{
+      grid-area: number;
+      font-size: 3em;
+      font-weight: bolder;
+      text-align: center;
+
+}
+.full-name{grid-area: fullName;}
+.expired-date{ grid-area: expiredDate;}
+
+.full-name,
+.expired-date{
+      font-size: 2em;      
+      /* text-align: center; */
+}
+
+.back-side{
+      display: none;
+}
