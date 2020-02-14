@@ -9,10 +9,10 @@
   </head>
   <body>
     <div class="content">
-      <!-- <h1 class="logo">netflix</h1> -->
+      
       <div class="card-wraper">
         <div class="card"> 
-          <div class="front-side">
+          <div class="front-side" >
             <div class="ship-card"></div>
             <span id = "card-number" class = "number-card">
               ****  ****  ****  ****
@@ -24,20 +24,32 @@
               MM/YY
             </span>
           </div>
-          <div id="card-cvv" class="back-side">
+          <div class="back-side">
+            <div class="magnetic-strip">asdasdas</div>   
+            <div class="signature-panel"></div>         
             <span>CVV</span>
           </div>
         </div>
       </div>
-      <div class="payment-form">
-        <!-- <h3>Configura tu tarjeta de crédito o débito</h3> -->
-        <!-- <form action=""> -->
-          <input type="text" name="nameOwner" id="input-name" maxlength="15" placeholder="Nombre del propietario" >
-          <input type="text" name="cardNumber" id="input-number" placeholder="Número de tarjera" maxlength="16">
-          <input type="text" name="expirationDate" id="input-date"placeholder="mm/yy" maxlength="5">
-          <!-- <input type="text" name="codeSecurity" id="input-cvv" placeholder="CVV" maxlength="3"> -->
-          <button  id="validarBtn">validar</button>
-        <!-- </form>         -->
+
+      <div class="payment-form">  
+        <p>
+          <label >Número de Tarjeta</label>      
+          <input type="text" name="cardNumber" id="input-number" placeholder="Ejm: 3432 3434 6564 1243" maxlength="16">
+        </p>
+        <p>
+          <label for="">Nombre en la Tarjeta</label>
+          <input type="text" name="nameOwner" id="input-name" maxlength="15" placeholder="Ejm: Luis Bustamante" >
+        </p>
+        <p>
+          <label for="">Fecha de Expiración</label>
+          <input type="text" name="expirationDate" id="input-date"placeholder="Ejm: 08/22" maxlength="5">
+        </p>
+        <div class="div-buttons">
+          <button  id="cleanBtn">Limpiar</button>        
+          <button  id="validateBtn">validar</button>                  
+        </div>
+        
       </div>
       <div class="alert">
         <div class="icon-check"></div>

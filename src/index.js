@@ -5,16 +5,17 @@ const cardObj = {
       number: '**** **** **** ****',
       name: 'FULL NAME',
       date: 'MM/YY',
-      cvv : '***'
+      // cvv : '***'
 }
 
-
+let card = document.getElementById("card");
 //Elementos Input
 let inputName = document.getElementById("input-name");
 let inputNumber = document.getElementById("input-number");
 let inputDate = document.getElementById("input-date");
 // let inputCvv = document.getElementById("input-cvv");
-let validarBtn = document.getElementById("validarBtn");
+let validateBtn = document.getElementById("validateBtn");
+let cleanBtn = document.getElementById("cleanBtn")
 let rptsLabel = document.getElementById("rpts");
 
 //elementos de la tarjeta
@@ -49,13 +50,12 @@ inputNumber.addEventListener("keydown",(event) =>
 
 inputName.addEventListener("keydown",(event) => {      
       let ch = String.fromCharCode(event.which);
-      if((/[a-zA-Z]/.test(ch)) || event.which === 8)
+      // console.log(event.which);
+      if((/[a-zA-Z]/.test(ch)) || event.which === 8 || event.which === 32)
       {
             inputName.addEventListener("input",() =>
-            {
-                  console.log("evento input");
-                  cardName.innerHTML = "" + validator.maskify(inputName.value); 
-                  console.log("valor: "+inputName.value);
+            {                  
+                  cardName.innerHTML = "" + (inputName.value).toUpperCase();                   
                   if(inputName.value.length === 0)
                         cardName.innerHTML = cardObj.name;       
             });
@@ -112,31 +112,50 @@ inputDate.addEventListener("keydown",(event) =>
 
 
 //Evento para valida tarjeta
-validarBtn.addEventListener("click",() => 
+validateBtn.addEventListener("click",() => 
 {
       let number = inputNumber.value;      
       const response = validator.isValid(number);
-
-      if(number.length > 0)
+      if(inputNumber.value.length > 0 && inputName.value.length > 0 && inputDate.value.length > 0)
       {
-            if(response === true)
+            if(number.length > 0)
             {
-                  // alertWindows.style.border = "#49B607";
-                  rptsLabel.innerHTML = "Tarjeta Válida";  
-                  rptsLabel.style.color = "#49B607"
+                  if(response === true)
+                  {
+                        // alertWindows.style.border = "#49B607";
+                        rptsLabel.innerHTML = "Tarjeta Válida";  
+                        rptsLabel.style.color = "#49B607"
+                  }
+                  else
+                  {
+                        // alertWindows.style.borderColor = "#FF5733";
+                        // card.style.background = "linear-gradient(70deg,dark,white)";
+                        rptsLabel.innerHTML = "Tarjeta Inválida";
+                        rptsLabel.style.color = "#FF5733";           
+                  }
             }
             else
-            {
-                  // alertWindows.style.borderColor = "#FF5733";
-                  rptsLabel.innerHTML = "Tarjeta Inválida";
-                  rptsLabel.style.color = "#FF5733";           
-            }
-      }
-      else
-      { 
-            rptsLabel.innerHTML = "Ingrese Número de Tarjeta";
+            { 
+                  rptsLabel.innerHTML = "Ingrese Número de Tarjeta";
+                  rptsLabel.style.color = "#F1CC22"; 
+            }                  
+      }else
+      {
+            rptsLabel.innerHTML = "Complete todos los campos";
             rptsLabel.style.color = "#F1CC22"; 
-      }                  
+      }
+
+});
+
+cleanBtn.addEventListener("click",() => {
+      inputNumber.value = "";
+      inputName.value = "";
+      inputDate.value = "";
+      rptsLabel.innerHTML = "";
+      cardNumber.innerHTML = cardObj.number;
+      cardName.innerHTML = cardObj.name;
+      cardDate.innerHTML = cardObj.date;
+
 });
 
 // console.log(validator)
