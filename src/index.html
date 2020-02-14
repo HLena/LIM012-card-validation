@@ -15,7 +15,7 @@
           <div class="front-side">
             <div class="ship-card"></div>
             <span id = "card-number" class = "number-card">
-              ....  ....  ....  ....
+              ****  ****  ****  ****
             </span>
             <span id="card-name" class="full-name">
               FULL NAME
@@ -32,16 +32,16 @@
       <div class="payment-form">
         <!-- <h3>Configura tu tarjeta de crédito o débito</h3> -->
         <!-- <form action=""> -->
-          <input type="text" name="nameOwner" id="input-name" placeholder="Nombre del propietario" maxlength="20">
+          <input type="text" name="nameOwner" id="input-name" maxlength="15" placeholder="Nombre del propietario" >
           <input type="text" name="cardNumber" id="input-number" placeholder="Número de tarjera" maxlength="16">
-          <input type="text" name="expirationDate" id="input-date"placeholder="mm/yy" maxlength="7">
-          <input type="text" name="codeSecurity" id="input-cvv" placeholder="CVV" maxlength="3">
+          <input type="text" name="expirationDate" id="input-date"placeholder="mm/yy" maxlength="5">
+          <!-- <input type="text" name="codeSecurity" id="input-cvv" placeholder="CVV" maxlength="3"> -->
           <button  id="validarBtn">validar</button>
         <!-- </form>         -->
       </div>
-      <div class="confirm-request">
+      <div class="alert">
         <div class="icon-check"></div>
-        <span id="rpts" class="expired-date">-- --- --</span>
+        <span id="rpts" class="expired-date"></span>
       </div>
     </div>
     <script src="index.js" type="module"></script>

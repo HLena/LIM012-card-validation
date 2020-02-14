@@ -3,7 +3,7 @@
 }
 
 body{
-      background: #ffffff;
+      background-image: url(wallpaper.jpg);
       color: white;
       font-family: 'Quicksand', sans-serif;
       padding: 0 1.5em;
@@ -11,47 +11,36 @@ body{
 
 /* Estilos para formulario de pago */
 .content{
+      margin-top: 5%;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       padding:  1.5em; 
-      background: rgb(236, 236, 223);
       text-align: center;
+      /* background:rgb(241, 241, 219) ; */
       
-
-}
-
-.payment-form{      
-      max-width: 700px;
-      box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);       
-          
-}
-
-.payment-form > *{
-      padding: 1em;
 }
 
 .payment-form {
       text-align: center;
       margin: 1em;
-      /* padding: .6em 1em; */
+      max-width: 700px;
+      padding: 2em;
+      background: transparent rgb(65, 63, 63);     
 }
-
-
-
 
 .payment-form button,
 .payment-form input{
       width: 100%;
       padding: 1em;
       border: none;
-      outline: none;
-      margin: .6em ;
+      /* outline: none; */
+      margin: .4em ;
       border-radius: .2em;
 }
 
 .payment-form button{
-      background: black;
+      background: rgb(226, 195, 16);
       color: white;
       max-width: 50%;
       text-transform: uppercase;
@@ -62,16 +51,15 @@ body{
       display: block;
 }
 
-.confirm-request span{
+.alert span{
       color: black;
       
 }
-.confirm-request{
+.alert{
       padding: 1em;
 }
 /* Estilos para tarjeta de credito */
-.card-wrapper{
-      /* text-align: center;    */
+.card-wrapper{      
       display: inline-block;         
 }
 
@@ -79,11 +67,9 @@ body{
       max-width: 700px;
       height: auto !important;
       min-height: 400px;
-      height: 150em;
-      /* background: rgb(32, 32, 59); */
+      height: 150em;      
       padding: 1em;
-      border-radius: 1em ;  
-      /* background: linear-gradient(50deg, black,rgb(48, 156, 206)); */
+      border-radius: 1em ;        
       background: linear-gradient(70deg,rgb(57, 57, 173),rgb(67, 177, 67));
       
 }
@@ -107,9 +93,8 @@ body{
 }
 .ship-card{
       grid-area: ship;
-      background-image: url("../chip.png");
-      
-      background: linear-gradient(10deg,rgb(230, 216, 216),rgb(161, 138, 5));
+      background-image: url("chip.png");      
+      /* background: linear-gradient(10deg,rgb(230, 216, 216),rgb(161, 138, 5)); */
       /* background: rgb(238, 199, 27); */
       border-radius: .5em;
       width: 15%;
@@ -119,9 +104,10 @@ body{
 
 .number-card{
       grid-area: number;
-      font-size: 3em;
+      font-size: 2.2em;
       font-weight: bolder;
       text-align: center;
+      letter-spacing: .1em;
 
 }
 .full-name{grid-area: fullName;}
@@ -135,4 +121,17 @@ body{
 
 .back-side{
       display: none;
+}
+
+.alert span{
+      font-weight: bolder;
+}
+
+.alert{
+      /* display: none; */
+      max-width: 700px;
+      background:white; 
+      border-radius: .5em;
+      border: solid;
+      /* border-color: black; */
 }
