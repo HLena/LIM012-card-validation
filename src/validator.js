@@ -5,10 +5,10 @@ const validator = {
       {
             let sum = 0;
             let currentDigit = 0;
-
+            cardNumber = cardNumber.split("").map(Number);
             for(let i = cardNumber.length - 1; i >= 0 ; i--)
-            {
-                  currentDigit = parseInt(cardNumber[i],10);
+            {                  
+                  currentDigit = cardNumber[i];
                   if(i % 2 === 1)
                   {                        
                         currentDigit = currentDigit * 2;                        
