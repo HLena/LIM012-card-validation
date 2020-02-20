@@ -11,7 +11,7 @@
   2. La solución en el que este trabajo se basa es muy simple, para ello se emplea el algoritmo de Luhn que solo requiere del número de tarjeta. Este trabjo no almacena niguna información de los datos ingresados.
   3. Prototipo en papel
   ![](src/img/prototipo.png)
-  1. En la estapa del feedback recibi observaciones como que al usuario le gustaria limpiar los campos de entrada(inputs) de una manera rápida y no solo manualmete y  tambien la posibilidad de volver a validar una tarjeta nueva si es que el usuario asi lo desea. 
+  1. En la etapa del feedback recibi la observacion sobre la posibilidad de volver a validar una tarjeta nueva si es que el usuario asi lo desea y para ello era necesaria la existencia de un boton que permitiera regresar al formulario con los campos limpios para ingresar los nuevos datos, asi mismo tambien mostrar un mensaje de alerta cuando todos los campos de entrada no son completados. 
    ![](src/img/screen1.png) ![](src/img/screen2.png)
   2. pendiente 
 
