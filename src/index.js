@@ -25,7 +25,6 @@ let inputNumber = document.getElementById("input-number");
 let inputDate = document.getElementById("input-date");
 let inputCvv = document.getElementById("input-cvv");
 let validateBtn = document.getElementById("validate-btn");
-// let cleanBtn = document.getElementById("clean-btn")
 
 
 //Elementos del mensaje(alert/valido/invalido)
@@ -40,8 +39,8 @@ let otherCardBtn = document.getElementById("btn-other-card");
 inputNumber.addEventListener("keydown",(event) =>
 {      
       let long = 0;
-      let ch = String.fromCharCode(event.which);      
-      if((/[0-9]/.test(ch)) || event.which === KEY_DELETE)
+      let key = String.fromCharCode(event.which);      
+      if((/[0-9]/.test(key)) || event.which === KEY_DELETE)
       {
             inputNumber.addEventListener("input",() =>
             {
@@ -58,8 +57,8 @@ inputNumber.addEventListener("keydown",(event) =>
 });
 
 inputName.addEventListener("keydown",(event) => {      
-      let ch = String.fromCharCode(event.which);      
-      if((/[a-zA-Z]/.test(ch)) || event.which === KEY_DELETE || event.which === KEY_SPACE)
+      let key = String.fromCharCode(event.which);      
+      if((/[a-zA-Z]/.test(key)) || event.which === KEY_DELETE || event.which === KEY_SPACE)
       {
             inputName.addEventListener("input",() =>
             {                  
@@ -76,8 +75,8 @@ inputName.addEventListener("keydown",(event) => {
 });
 
 inputCvv.addEventListener("keydown",(event) => {
-      let ch = String.fromCharCode(event.which);      
-      if((/[0-9]/.test(ch)) || event.which === KEY_DELETE)
+      let key = String.fromCharCode(event.which);      
+      if((/[0-9]/.test(key)) || event.which === KEY_DELETE)
       {
             inputCvv.addEventListener("input",() =>
             {                  
@@ -92,50 +91,7 @@ inputCvv.addEventListener("keydown",(event) => {
       }
 });
 
-// inputDate.addEventListener("keydown",(event) => 
-// {     //Formato MM/YY
-//       let len = inputDate.value.length;
-//       let digit = String.fromCharCode(event.which);      
-//       if(/[1-9]/.test(digit) && len === 0){
-//             inputDate.value = "0" + inputDate.value;
-//             console.log("len:" + inputDate.value.length);
-//       }      
-//       else
-//       {     
-//             console.log("len:" + inputDate.value.length);
-//             if(len === 1 && !(event.which === KEY_DELETE ))
-//             {
-//                   if((inputDate.value[0] === "0" && !(/[1-9]/.test(digit))) || (inputDate.value[0] === "1" && !(/[0-2]/.test(digit))))
-//                   {                        
-//                         event.preventDefault();
-//                   }
-//                   else
-//                   {
-//                         cardDate.innerHTML = "" + inputDate.value;                                                                  
-//                   }
 
-//             }
-//             else if(len === 2 && !(event.which === KEY_DELETE ))
-//             {     
-//                   console.log("valor: " + inputDate.value);
-//                   inputDate.value += "/";                      
-//             }
-//             else if(event.which === KEY_DELETE || (/[0-9]/.test(digit)))
-//             {                  
-//                   inputDate.addEventListener("input",() => 
-//                   {
-//                         cardDate.innerHTML = "" + inputDate.value;                                          
-//                         if(inputDate.value.length === 0)
-//                               cardDate.innerHTML = cardObj.date;  
-                        
-//                   });                  
-//             }
-//             else
-//             {                  
-//                   event.preventDefault();      
-//             }
-//       }      
-// });
 inputDate.addEventListener("keydown",(event) => 
 {     //Formato MM/YY
       let len = inputDate.value.length;
@@ -160,7 +116,6 @@ inputDate.addEventListener("keydown",(event) =>
             }
             else if(len === 2 && !(event.which === KEY_DELETE ))
             {     
-                  console.log("valor: " + inputDate.value);
                   inputDate.value += "/";                      
             }
             else if(event.which === KEY_DELETE || (/[0-9]/.test(digit)))
@@ -229,10 +184,9 @@ let cleanInputs = () => {
       cardName.innerHTML = cardObj.name;
       cardDate.innerHTML = cardObj.date;
       cardCvv.innerHTML = cardObj.cvv;
-      cardSignature.innerHTML = cardObj.signature;
+      cardSignature[0].innerHTML = cardObj.signature;
 }
 
-// cleanBtn.addEventListener("click",cleanInputs);
 
 otherCardBtn.addEventListener('click', () => {
       alertBox[0].style.display = 'none';      
