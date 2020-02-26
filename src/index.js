@@ -45,9 +45,9 @@ inputNumber.addEventListener("keydown",(event) =>
             inputNumber.addEventListener("input",() =>
             {
                   long = inputNumber.value.length;                  
-                  cardNumber.innerHTML = "" + validator.maskify(inputNumber.value);                   
+                  cardNumber.textContent = "" + validator.maskify(inputNumber.value);                   
                   if(long === 0)
-                        cardNumber.innerHTML = cardObj.number;       
+                        cardNumber.textContent = cardObj.number;       
             });
       }
       else
@@ -62,10 +62,10 @@ inputName.addEventListener("keydown",(event) => {
       {
             inputName.addEventListener("input",() =>
             {                  
-                  cardName.innerHTML = "" + (inputName.value).toUpperCase();
-                  cardSignature[0].innerHTML = "" + inputName.value;                                     
+                  cardName.textContent = "" + (inputName.value).toUpperCase();
+                  cardSignature[0].textContent = "" + inputName.value;                                     
                   if(inputName.value.length === 0)
-                        cardName.innerHTML = cardObj.name;       
+                        cardName.textContent = cardObj.name;       
             });
       }
       else
@@ -80,9 +80,9 @@ inputCvv.addEventListener("keydown",(event) => {
       {
             inputCvv.addEventListener("input",() =>
             {                  
-                  cardCvv.innerHTML = "" + inputCvv.value;                   
+                  cardCvv.textContent = "" + inputCvv.value;                   
                   if(inputCvv.value.length === 0)
-                        cardCvv.innerHTML = cardObj.cvv;       
+                        cardCvv.textContent = cardObj.cvv;       
             });
       }
       else
@@ -110,7 +110,7 @@ inputDate.addEventListener("keydown",(event) =>
                   }
                   else
                   {
-                        cardDate.innerHTML = "" + inputDate.value;                                                                  
+                        cardDate.textContent = "" + inputDate.value;                                                                  
                   }
 
             }
@@ -122,9 +122,9 @@ inputDate.addEventListener("keydown",(event) =>
             {                  
                   inputDate.addEventListener("input",() => 
                   {
-                        cardDate.innerHTML = "" + inputDate.value;                                          
+                        cardDate.textContent = "" + inputDate.value;                                          
                         if(inputDate.value.length === 0)
-                              cardDate.innerHTML = cardObj.date;  
+                              cardDate.textContent = cardObj.date;  
                         
                   });                  
             }
@@ -154,21 +154,21 @@ validateBtn.addEventListener("click",() =>
             if(response === true)
             {                        
                   alertImg[0].src = "img/correct-check.png";
-                  alertMessage.innerHTML = "Tarjeta Válida";  
+                  alertMessage.textContent = "Tarjeta Válida";  
                   alertMessage.style.color = "#49B607";
                   alertMessage.style.fontSize = "2em";
             }
             else
             {     
                   alertImg[0].src = "img/wrong-check.png";                
-                  alertMessage.innerHTML = "Tarjeta Inválida";
+                  alertMessage.textContent = "Tarjeta Inválida";
                   alertMessage.style.color = "#FF5733";      
                   alertMessage.style.fontSize = "2em";
             }
             
       }else
       {            
-            alertMessage.innerHTML = "Complete todos los campos";
+            alertMessage.textContent = "Complete todos los campos";
             alertMessage.style.color = "#F1CC22";
             otherCardBtn.style.display = "none"; 
       }
@@ -179,12 +179,12 @@ let cleanInputs = () => {
       inputName.value = "";
       inputDate.value = "";
       inputCvv.value = "";
-      alertMessage.innerHTML = "";
-      cardNumber.innerHTML = cardObj.number;
-      cardName.innerHTML = cardObj.name;
-      cardDate.innerHTML = cardObj.date;
-      cardCvv.innerHTML = cardObj.cvv;
-      cardSignature[0].innerHTML = cardObj.signature;
+      alertMessage.textContent = "";
+      cardNumber.textContent = cardObj.number;
+      cardName.textContent = cardObj.name;
+      cardDate.textContent = cardObj.date;
+      cardCvv.textContent = cardObj.cvv;
+      cardSignature[0].textContent = cardObj.signature;
 }
 
 
