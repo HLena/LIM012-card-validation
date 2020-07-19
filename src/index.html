@@ -8,67 +8,82 @@
       <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Raleway:ital,wght@0,400;0,500;1,300&display=swap" rel="stylesheet">
+      <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
       <title>CardValidation</title>
 </head>
 <body>      
-  <div class="container">
-    <header class="cell cell-header"></header>
-    <aside class="cell cell-left-side"></aside>
-    <main>
-      <div class="cell cell-card">
+  <main id="container">
+      <section class="card-section">
+        
+        <div class="card-background">
+        </div>
         <div class="card-wrapper" >
-          <div class="card" id="card-obj">                
-            <div class="front-side" id="front">      
-              <img class="chip-card" src="img/chip.png" >              
-              <img class="logo-card" src="img/logo-visa.png" >  
-              <div id="card-number" class = "number-card">              
-                  ****  ****  ****  ****              
+            <div class="card" id="card-obj">                
+              <div class="front-side" id="front">      
+                <div class="element">
+                  <img id="logo-card" src="../img/logo-visa.png" >  
+                </div>
+              <div class="element">
+                <img id="chip-card" src="../img/chip.png" >              
+
               </div>
-              <div id="card-name" class="full-name">                         
-                NOMBRE COMPLETO
+              <div class="element">
+
+                <span id="card-number">              
+                  #### #### #### ####
+                </span>
               </div>
-              <div id="card-date" class="expired-date">              
-                  MM/AA           
-              </div>            
+              <div class="element col-2">
+                <span id="card-name">                         
+                  FULL NAME
+                </span>
+                <span id="card-date">              
+                    MM/AA           
+                </span>            
+              </div>
+              </div>
+              <div class="back-side" id="back">      
+                <div class="element magnetic-strip"></div>   
+                <div class="element col-2">
+                  <div id="signature-panel"></div>  
+                  <span id="card-cvv">###</span>         
+                </div>    
+              </div>    
             </div>
-            <div class="back-side" id="back">      
-              <div class="magnetic-strip"></div>   
-              <div class="signature-panel"></div>      
-              <div id="card-cvv">***</div>         
-            </div>    
           </div>
+      </section>          
+      <section class="form-section">
+        <div class="alert hidden">  
+          <span class="result">
+            tarjeta valida
+          </span>
+          <i class='bx icon-validation'></i>
+          <button  id="btn-other-card">Validate Other Card</button>        
         </div>
-      </div>          
-      <div class="cell cell-form payment-form">
-        <div class="alert">
-          <img class="icon-check"  alt="">
-          <div id="rpts" class="expired-date">tarjeta valida</div>
-          <button  id="btn-other-card">Validar otra tarjeta</button>        
+        <div id="form">
+          <h1 id="title"><strong>Your Payment Details</strong></h1>
+          <div class="form-field col-1">
+            <label for="">card number</label>
+            <input class="input-field" id="input-number" type="text" placeholder="Ejemplo: 3424242342" maxlength="16" autocomplete="false">
+          </div>
+          <div class="form-field col-1">
+            <label for="">cardholder name</label>
+            <input class="input-field" id="input-name" type="text" placeholder="Ejemplo: José Domingez" maxlength="20" autocomplete="false">
+          </div>
+          <div class="form-field col-2">
+            <label for="">expiration date</label>          
+            <input class="input-field" id="input-date" type="text" placeholder="Ejemplo: 05/24" maxlength="5" autocomplete="false">
+          </div>
+          <div class="form-field col-2">
+            <label for="">CVC</label>
+            <input class="input-field" id="input-cvv" type="text" placeholder="Ejemplo: 165" maxlength="3" autocomplete="false">
+          </div>          
+          <button id="validate-btn">Pay Now</button>
         </div>
-        <div class="payment-form-box">
-          <p>
-            <label>Número de Tarjeta</label>      
-            <input type="text" name="cardNumber" id="input-number" placeholder="Ejm: 3432 3434 6564 1243" maxlength="16">
-          </p>
-          <p>
-            <label for="">Nombre en la Tarjeta</label>
-            <input type="text" name="nameOwner" id="input-name" maxlength="20" placeholder="Ejm: Luis Bustamante" autocomplete="off">
-          </p>
-          <p>
-            <label for="">Fecha de Expiración</label>
-            <input type="text" name="expirationDate" id="input-date" placeholder="Ejm: 08/22" maxlength="5">
-          </p>
-          <p>
-            <label for="">Código de Seguridad</label>
-            <input type="text" name="codeSecurity" id="input-cvv" placeholder="Ejm: 156" maxlength="3">
-          </p>                
-          <button  id="validate-btn">validar</button>                                  
-        </div>
-      </div>            
-      <script src="index.js" type="module"></script>
-    </main>
-    <aside class="cell cell-right-side"></aside>
-    <footer class="cell cell-footer"></footer>
-  </div>      
+        <span id="rpts"></span>
+      </sec>            
+    </main>      
+    <script src="index.js" type="module"></script>
 </body>
 </html>
